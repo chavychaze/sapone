@@ -15,10 +15,16 @@ spec:
       containers:
         - name: auth
           image: chavy/auth
-          resources:
-            limits:
-              memory: "254Mi"
-              cpu: "500m"
+          env: 
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+          # resources:
+          #   limits:
+          #     memory: "254Mi"
+          #     cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
