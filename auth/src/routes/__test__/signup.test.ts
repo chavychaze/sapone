@@ -76,5 +76,5 @@ it('sets a cookie after successful signup', async () => {
     })
     .expect(201);
 
-    expect(response.get('Set-Cookie')).toBeDefined();
+  expect(response.get('Set-Cookie')).toBeDefined();
 });
