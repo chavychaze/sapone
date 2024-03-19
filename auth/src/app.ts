@@ -2,13 +2,12 @@ import express from 'express';
 import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
+import { errorHandler, NotFoundError } from '@zibelina/common';
 
 import { currentUserRouter } from './routes/users/current-user';
 import { signinRouter } from './routes/users/signin';
 import { signoutRouter } from './routes/users/signout';
 import { signupRouter } from './routes/users/signup';
-import { errorHandler } from './middleware/error-handler';
-import { NotFoundError } from './errors/not-found-error';
 
 const app = express();
 app.set('trust proxy', true);
