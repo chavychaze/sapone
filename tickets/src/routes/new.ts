@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import { requireAuth, validateRequest } from '@zibelina/common';
+
 import { Ticket } from '../models/ticket';
 
 const router = express.Router();
@@ -14,7 +15,7 @@ router.post(
       .isFloat({
         gt: 0,
       })
-      .withMessage('Price must be greater that zero'),
+      .withMessage('Price must be greater than zero'),
   ],
   validateRequest,
   async (req: Request, res: Response) => {
