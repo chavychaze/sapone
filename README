@@ -1,0 +1,17 @@
+# To upload image to Docker hub
+```bash
+$ docker build -t chavy/SERVICE_NAME .
+```
+
+# To run Application
+```bash
+$ skaffold dev
+```
+
+# Set up Kubernetes
+```bash
+$ kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=120s
+```
